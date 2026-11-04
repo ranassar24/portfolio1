@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>179049 - Raheeq Ahmad Hussein Nassar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #070d1e;
+            --card-bg: rgba(15, 26, 54, 0.85);
+            --neon-cyan: #00f2fe;
+            --neon-blue: #4facfe;
+            --neon-green: #10b981;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(79, 172, 254, 0.08), transparent 25%),
+                linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 35px 35px, 35px 35px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 13, 30, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.25);
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(0, 242, 254, 0.15);
+            color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 20px;
+            padding: 45px 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .profile-img-wrapper {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+            box-shadow: 0 0 28px rgba(0, 242, 254, 0.5);
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .uni-tag {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        .badge-info {
+            display: inline-block;
+            background: rgba(79, 172, 254, 0.15);
+            border: 1px solid rgba(0, 242, 254, 0.35);
+            color: var(--neon-cyan);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 28px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(0, 242, 254, 0.4);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            color: var(--neon-cyan);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 12px;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 14px;
+        }
+
+        .skills-list li {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            padding: 13px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skills-list li:hover {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(79, 172, 254, 0.2));
+            border-color: var(--neon-cyan);
+            transform: scale(1.04);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        th {
+            background: rgba(0, 242, 254, 0.12);
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .tool-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .tool-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 5px;
+        }
+
+        .tool-link {
+            display: inline-block;
+            color: var(--bg-dark);
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue));
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .tool-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.5);
+        }
+
+        .status-passed {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--neon-green);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .future-text {
+            color: var(--text-main);
+            font-size: 1.02rem;
+            text-align: justify;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 20px;
+            border-left: 4px solid var(--neon-cyan);
+            border-radius: 8px;
+        }
+
+        .email-box {
+            text-align: center;
+        }
+
+        .mailto-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 13px 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue));
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 0 18px rgba(0, 242, 254, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .mailto-btn:hover {
+            box-shadow: 0 0 28px rgba(0, 242, 254, 0.7);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CyberPortfolio</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="hero-card">
+            <div class="profile-img-wrapper">
+                <img src="profile.jpg" alt="Raheeq Ahmad Hussein Nassar">
+            </div>
+            <h1>RAHEEQ AHMAD HUSSEIN NASSAR</h1>
+            <p class="uni-tag">Student at Jordan University of Science and Technology (JUST)</p>
+            <div>
+                <span class="badge-info">Major: Software Engineering (SE)</span>
+                <span class="badge-info">Academic Level: Third Year</span>
+                <span class="badge-info">SID: 179049</span>
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="section-card">
+            <h2 class="section-title">⚡ Key Soft Skills</h2>
+            <ul class="skills-list">
+                <li>🤝 Teamwork</li>
+                <li>🛠️ Problem-Solving</li>
+                <li>🧠 Analytical Thinking</li>
+                <li>💬 Effective Communication</li>
+                <li>🔄 Adaptability</li>
+            </ul>
+        </div>
+
+        <!-- Favorite Programming Languages & Tools -->
+        <div class="section-card">
+            <h2 class="section-title">🛠️ Favorite Technologies & Cybersecurity Tools</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Technology / Tool</th>
+                            <th>Category</th>
+                            <th>Official Portal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tool-cell">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="tool-icon" alt="JS">
+                                JavaScript
+                            </td>
+                            <td>Programming Language</td>
+                            <td><a href="https://www.javascript.com" target="_blank" class="tool-link">javascript.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-cell">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="tool-icon" alt="Python">
+                                Python
+                            </td>
+                            <td>Programming Language</td>
+                            <td><a href="https://www.python.org" target="_blank" class="tool-link">python.org ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-cell">
+                                <img src="https://www.wireshark.org/assets/icons/wireshark-fin.png" class="tool-icon" alt="Wireshark">
+                                Wireshark
+                            </td>
+                            <td>Cybersecurity Tool</td>
+                            <td><a href="https://www.wireshark.org" target="_blank" class="tool-link">wireshark.org ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-cell">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="tool-icon" alt="Kali">
+                                Kali Linux
+                            </td>
+                            <td>Security Framework / OS</td>
+                            <td><a href="https://www.kali.org" target="_blank" class="tool-link">kali.org ↗</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Completed Academic Courses -->
+        <div class="section-card">
+            <h2 class="section-title">📚 Highlighted Completed Courses</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Name / Title</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Web Application Development</td>
+                            <td>Core Requirement</td>
+                            <td><span class="status-passed">Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Information & Network Security</td>
+                            <td>Core Requirement</td>
+                            <td><span class="status-passed">Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Database Management Systems</td>
+                            <td>Core Requirement</td>
+                            <td><span class="status-passed">Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Object-Oriented Programming</td>
+                            <td>Faculty Requirement</td>
+                            <td><span class="status-passed">Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Data Structures & Algorithms</td>
+                            <td>Core Requirement</td>
+                            <td><span class="status-passed">Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Systems Analysis and Design</td>
+                            <td>Core Requirement</td>
+                            <td><span class="status-passed">Passed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Where Do I See Myself in 4 Years? -->
+        <div class="section-card">
+            <h2 class="section-title">🎯 Where Do I See Myself in 4 Years?</h2>
+            <p class="future-text">
+                Over the next four years, I see myself working as an advanced software developer and application security specialist at a leading technology company. My primary goal is to master modern programming languages like JavaScript and Python while integrating robust cybersecurity practices into every stage of software development. I also aim to specialize in cloud security and penetration testing to protect enterprise applications against emerging digital threats. Furthermore, I plan to earn internationally recognized security certifications to strengthen my practical and analytical capabilities. Ultimately, I aspire to lead innovative technical projects that deliver both high performance and resilient digital security.
+            </p>
+        </div>
+
+        <!-- Direct University Contact -->
+        <div class="section-card email-box">
+            <h2 class="section-title" style="justify-content: center;">✉️ Direct University Contact</h2>
+            <p style="color: var(--text-muted);">You can reach me directly via my official JUST university email address:</p>
+            <a href="mailto:ranassar24@cit.just.edu.jo" class="mailto-btn">ranassar24@cit.just.edu.jo</a>
+        </div>
+
+        <!-- Direct WhatsApp Chat Button -->
+        <div class="section-card email-box">
+            <h2 class="section-title" style="justify-content: center;">💬 Direct WhatsApp Chat</h2>
+            <p style="color: var(--text-muted);">You can also contact me directly via WhatsApp:</p>
+            <a href="https://wa.me/962796345044?text=Hello%20Raheeq,%20I%20visited%20your%20portfolio" target="_blank" class="mailto-btn" style="background: linear-gradient(90deg, #25d366, #128c7e); color: white;">Chat on WhatsApp 📱</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Raheeq Ahmad Hussein Nassar - Jordan University of Science and Technology
+    </footer>
+
+</body>
+</html>

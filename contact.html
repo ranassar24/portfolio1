@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | 179049 - Raheeq Nassar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #070d1e;
+            --card-bg: rgba(15, 26, 54, 0.85);
+            --neon-cyan: #00f2fe;
+            --neon-blue: #4facfe;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(0, 242, 254, 0.08), transparent 25%),
+                linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 35px 35px, 35px 35px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background: rgba(7, 13, 30, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.25);
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(0, 242, 254, 0.15);
+            color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
+
+        .form-container {
+            max-width: 600px;
+            width: 90%;
+            margin: 45px auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-cyan);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .contact-info-strip {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 242, 254, 0.15);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+
+        .contact-info-strip span {
+            color: var(--neon-cyan);
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--neon-cyan);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(7, 13, 30, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue));
+            border: none;
+            border-radius: 10px;
+            color: var(--bg-dark);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.35);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CyberPortfolio</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html" class="active">Contact Me</a>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h1>💬 Contact Me</h1>
+
+        <div class="contact-info-strip">
+            <div>📞 Phone: <span>+962 7 9634 5044</span></div>
+            <div>📍 Location: <span>Jordan</span></div>
+        </div>
+
+        <form id="contactForm" onsubmit="return validateForm(event)">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" placeholder="example@domain.com">
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country *</label>
+                <input type="text" id="country" placeholder="e.g., Jordan">
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Comments / Message *</label>
+                <textarea id="comments" placeholder="Write your comments here..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message 🚀</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2026 Raheeq Ahmad Hussein Nassar - Jordan University of Science and Technology
+    </footer>
+
+    <!-- JavaScript للتحقق وتنبيه Alert حسب شروط الدكتور -->
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            var fullName = document.getElementById("fullName").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var country = document.getElementById("country").value.trim();
+            var comments = document.getElementById("comments").value.trim();
+
+            if (fullName === "" || email === "" || country === "" || comments === "") {
+                alert("Please fill in all fields before submitting the form!");
+                return false;
+            }
+
+            alert("Thank you, " + fullName + "! Your form has been submitted successfully.");
+            document.getElementById("contactForm").reset();
+            return true;
+        }
+    </script>
+
+</body>
+</html>
